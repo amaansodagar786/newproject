@@ -9,6 +9,7 @@ import Contact from './Componants/Contact/Contact';
 import Header from './Componants/Navbar/Header';
 // import Slider from './Componants/Home/Slider/Slider';
 import SliderComponant from './Componants/Home/Slider/Slider';
+import Hrconsultancy from './Componants/Services/HR Consultancy/Hrconsultancy';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='/career' element= {<Career/>}/>
             <Route path='/contact' element= {<Contact/>}/>
             <Route path='/slider' element= {<SliderComponant/>}/>
+            <Route path='/hrconsultancy' element= {<Hrconsultancy/>}/>
 
             </Routes>
             <Footer/>

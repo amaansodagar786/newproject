@@ -68,16 +68,16 @@ const Header = () => {
           className={activestate === 'services' ? 'active' : ''}
           onClick={toggleDropdown}
         >
-          <span>Services</span>
+          <Link> <span className='service'>Services</span> </Link>
           <ul className={`Dropdown ${dropdownOpen ? 'show' : ''}`}>
             <li onClick={() => hideMenu('service1')}>
-              <Link to='/service1'>Hr Consultancy</Link>
+              <Link to='/hrconsultancy'>HR Consultancy</Link>
             </li>
             <li onClick={() => hideMenu('service2')}>
-              <Link to='/service2'>Event Management</Link>
+              <Link to='/eventmanagement'>Event Management</Link>
             </li>
             <li onClick={() => hideMenu('service3')}>
-              <Link to='/service3'>Insurance</Link>
+              <Link to='/insurance'>Insurance</Link>
             </li>
           </ul>
         </li>
@@ -93,7 +93,7 @@ const Header = () => {
           className={activestate === 'contact' ? 'active' : ''}
           onClick={() => hideMenu('contact')}
         >
-          <Link to='/contact'>Contact us</Link>
+          <Link to='/contact'>Contact</Link>
         </li>
       </ul>
     </nav>

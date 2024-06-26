@@ -4,6 +4,9 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './Contact.scss';
+import { FaLocationDot } from 'react-icons/fa6';
+import { IoIosCall } from 'react-icons/io';
+import { MdEmail } from 'react-icons/md';
 
 const Contact = () => {
   const validationSchema = Yup.object({
@@ -51,13 +54,15 @@ const Contact = () => {
         <h2>Better yet, see us in person!</h2>
         <p>We love our customers, so feel free to visit during normal business hours.</p>
         <address>
-          <strong>Noah Workforce Development System</strong><br />
-          Vasna, Vadodara, Gujarat, India<br />
-          <strong>Contact No:</strong> +91-9510287060<br />
-          <strong>Email:</strong> info@noahwds.com
+          <strong>Noah Workforce Development System</strong>
+          
+          <p> <b><FaLocationDot /> :  </b>  Vasna, Vadodara, Gujarat, India </p>
+          <p> <b><IoIosCall /> : </b> +91-9510287060 </p>
+          <p> <b><MdEmail /> : </b> info@noahwds.com </p>
+         
         </address>
-        <h3>Hours</h3>
-        <p>
+        <h3>Work Hours</h3>
+        <p className='timings'>
           Mon 10:00 am - 07:00 pm<br />
           Tue 10:00 am - 07:00 pm<br />
           Wed 10:00 am - 07:00 pm<br />
