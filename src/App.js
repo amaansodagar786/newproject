@@ -10,11 +10,13 @@ import Header from './Componants/Navbar/Header';
 // import Slider from './Componants/Home/Slider/Slider';
 import SliderComponant from './Componants/Home/Slider/Slider';
 import Hrconsultancy from './Componants/Services/HR Consultancy/Hrconsultancy';
+import Gototop from './Componants/Gototop/Gototop';
 
 function App() {
   return (
     <>
             <BrowserRouter>
+            <Gototop/>
             <Header/>
             <Routes>
             <Route path='/' element= {<Home/>}/>

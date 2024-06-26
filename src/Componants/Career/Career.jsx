@@ -1,12 +1,9 @@
-// src/components/CareerForm.jsx
-
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { AiOutlinePaperClip } from 'react-icons/ai';
 import './Career.scss';
 
-const Career = () => {
+const CareerForm = () => {
   const validationSchema = Yup.object({
     name: Yup.string().required('Required'),
     phone: Yup.string().required('Required'),
@@ -21,6 +18,7 @@ const Career = () => {
       <h1>We're Hiring!</h1>
       <h2>Join Our Team</h2>
       <p>If you're interested in one of our open positions, start by applying here and attaching your resume.</p>
+      <p className='apply'>Apply Now</p>
       <Formik
         initialValues={{ name: '', phone: '', email: '', position: '', message: '', resume: null }}
         validationSchema={validationSchema}
@@ -31,40 +29,66 @@ const Career = () => {
         {({ setFieldValue }) => (
           <Form>
             <div className="form-group">
-              <label htmlFor="name">Name*</label>
-              <Field type="text" id="name" name="name" />
-              <ErrorMessage name="name" component="div" className="error" />
+              <Field name="name">
+                {({ field }) => (
+                  <div className="input-container">
+                    <input type="text" {...field} placeholder="Name*" />
+                    <ErrorMessage name="name" component="div" className="error" />
+                  </div>
+                )}
+              </Field>
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone*</label>
-              <Field type="text" id="phone" name="phone" />
-              <ErrorMessage name="phone" component="div" className="error" />
+              <Field name="phone">
+                {({ field }) => (
+                  <div className="input-container">
+                    <input type="text" {...field} placeholder="Phone*" />
+                    <ErrorMessage name="phone" component="div" className="error" />
+                  </div>
+                )}
+              </Field>
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email*</label>
-              <Field type="email" id="email" name="email" />
-              <ErrorMessage name="email" component="div" className="error" />
+              <Field name="email">
+                {({ field }) => (
+                  <div className="input-container">
+                    <input type="email" {...field} placeholder="Email*" />
+                    <ErrorMessage name="email" component="div" className="error" />
+                  </div>
+                )}
+              </Field>
             </div>
             <div className="form-group">
-              <label htmlFor="position">Position Applied</label>
-              <Field type="text" id="position" name="position" />
-              <ErrorMessage name="position" component="div" className="error" />
+              <Field name="position">
+                {({ field }) => (
+                  <div className="input-container">
+                    <input type="text" {...field} placeholder="Position Applied" />
+                    <ErrorMessage name="position" component="div" className="error" />
+                  </div>
+                )}
+              </Field>
             </div>
             <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <Field as="textarea" id="message" name="message" />
+              <Field name="message">
+                {({ field }) => (
+                  <div className="input-container">
+                    <textarea {...field} placeholder="Message"></textarea>
+                  </div>
+                )}
+              </Field>
             </div>
             <div className="form-group">
-              <label htmlFor="resume">Attach Resume</label>
-              <input
-                type="file"
-                id="resume"
-                name="resume"
-                onChange={(event) => {
-                  setFieldValue('resume', event.currentTarget.files[0]);
-                }}
-              />
-              <ErrorMessage name="resume" component="div" className="error" />
+              <div className="input-container">
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  onChange={(event) => {
+                    setFieldValue('resume', event.currentTarget.files[0]);
+                  }}
+                />
+                <ErrorMessage name="resume" component="div" className="error" />
+              </div>
             </div>
             <button type="submit" className="submit-button">
               Submit Application
@@ -76,5 +100,4 @@ const Career = () => {
   );
 };
 
-export default Career;
-
+export default CareerForm;

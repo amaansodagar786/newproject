@@ -50,10 +50,12 @@
     }
 
     .submit-button {
-        width: 100%;
+        display: flex;
+        // width: 30%;
+        margin: 0 auto;
         background-color: #8a685b;
         color: #fff;
-        padding: 10px 20px;
+        padding: 10px 30px;
         border: none;
         border-radius: 5px;
         font-size: 1rem;
@@ -79,7 +81,7 @@
         color: #666;
     }
 
-    
+
 
     address {
         font-style: normal;
@@ -98,5 +100,128 @@
         color: #333;
         margin-top: 20px;
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        .form-group {
+
+            input,
+            textarea {
+                font-size: 0.9rem;
+            }
+
+            .error {
+                font-size: 0.7rem;
+            }
+        }
+
+        .submit-button {
+            font-size: 0.9rem;
+            padding: 10px 15px;
+        }
+    }
+
+    .contact-info {
+        h2 {
+            font-size: 1.4rem;
+            text-align: center;
+
+        }
+
+        p,
+        address strong {
+            font-size: 0.9rem;
+            text-align: center;
+
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            text-align: center;
+
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-container {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-form {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+
+            input,
+            textarea {
+                font-size: 0.8rem;
+            }
+
+            .error {
+                font-size: 0.6rem;
+            }
+        }
+
+        .submit-button {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            padding: 8px 30px;
+            // width: 30%;
+        }
+    }
+
+    .contact-info {
+        h2 {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        p,
+        address strong {
+            font-size: 0.8rem;
+            text-align: center;
+
+        }
+
+        h3 {
+            font-size: 1rem;
+            text-align: center;
+
+        }
     }
 }

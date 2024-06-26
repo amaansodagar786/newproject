@@ -109,3 +109,39 @@
       }
     }
   }
+
+  // Media queries for responsiveness
+  
+  // @media (max-width: 1024px) {
+  //   .slider-container {
+  //     width: 90%;
+  //   }
+  // }
+  
+  @media (max-width: 768px) {
+    .slider-container {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .slider-container {
+      width: 90%;
+    }
+  
+    .quote-container {
+      flex-direction: column; /* Stack content vertically */
+  
+      .quote-content, .quote-image {
+        text-align: center; /* Center align text and image */
+      }
+  
+      .quote-content {
+        padding: 10px;
+      }
+  
+      .quote-image {
+        padding: 10px;
+      }
+    }
+  }

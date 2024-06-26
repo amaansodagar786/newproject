@@ -2,7 +2,7 @@
 
 .career-form {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 70px  auto;
     padding: 20px;
     text-align: center;
@@ -21,6 +21,10 @@
     p {
       font-size: 1rem;
       color: #666;
+    }
+    .apply
+    {
+      font-size: 2rem;
     }
   
     .form-group {
@@ -63,5 +67,83 @@
         background-color: #76594e;
       }
     }
+    @media (max-width: 768px) {
+      padding: 10px;
+  
+      h1 {
+        font-size: 1.5rem;
+      }
+  
+      h2 {
+        font-size: 1.2rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+      }
+  
+      .form-group {
+        
+  
+        input,
+        textarea {
+          font-size: 0.9rem;
+        }
+  
+        .error {
+          font-size: 0.7rem;
+        }
+      }
+  
+      .submit-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      width: 80%;
+      // padding: 5px;
+      // padding-right: 10px;
+
+      margin: 10 auto;
+  
+      h1 {
+        font-size: 2rem;
+      }
+  
+      h2 {
+        font-size: 1.5rem;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+      .apply 
+      {
+        font-size: 2rem;
+      }
+  
+      .form-group {
+        label {
+          font-size: 0.7rem;
+        }
+  
+        input,
+        textarea {
+          font-size: 0.8rem;
+        }
+  
+        .error {
+          font-size: 0.6rem;
+        }
+      }
+  
+      .submit-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+    }
   }
+  
   
