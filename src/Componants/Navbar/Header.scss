@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+.active
+{
+  background-color: #8a35bbc8;
+  border-radius: 5px;
+}
+.Navbar{
+  
+  background-color:#fcfbfb;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  
+    height: 70px;
+    top: 0;
+    // transition: all 0.7s;
+  }
+  
+  
+  
+  .Logo{
+    // font-size: 32px;
+    // letter-spacing: 2px;
+    // padding-left: 7%;
+    // color: #9067C6;
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
+    cursor:pointer;
+    height: 60px;
+    margin-left: 50px;
+  }
+  
+  .NavbarLinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 7%;
+    font-weight: 500;
+    font-size: 22px;
+  }
+  
+  .NavbarLinks li{
+    font-family: "Mukta", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
+    padding: 2px 20px;
+    list-style-type: none;
+
+    @media(max-width: 500px) {
+      font-weight: 300;
+  }
+  }
+  
+  .NavbarLinks a{
+    // color: #c2c1c2;
+    
+  color: #0c0707;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 95%;
+    padding: 2px 7px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  
+  .NavbarLinks a:hover{
+    color: #26809b;
+  }
+  .NavbarLinks a::after{
+    background-color: #8b68ad;
+    content: "";
+    position: absolute;
+    height: 3px;
+    left: 45%;
+    bottom: 0;
+    width: 0px;
+    border-radius: 2px;
+    transition: 0.4s;
+    transform: translateX(-50%);
+  }
+  .NavbarLinks a:hover:after{
+    width: 75%;
+  }
+  .Hamburger{
+    display: none;
+  }
+  
+  @media(max-width:800px){
+    .Navbar{
+      width: 100%;
+    } 
+  
+    .NavbarLinks{
+      font-size: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: fixed;
+      inset: 0 0 0 50%;
+      gap: 50px;
+      background-color: #061f2e;
+      
+      color: #E7E7E7;
+  
+      height: 100vh;
+      padding-top: max(20%,120px);
+      transform: translateX(100%);
+      transition: 0.5s;
+    }
+  
+    .showNavbar{
+      transform: translateX(0);    
+    }
+  
+    .Hamburger{
+      display: block;
+      z-index: 2;
+      padding: 5px;
+      padding-right: 7%;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .Hamburger:hover {
+      color: #9067C6; 
+      
+    }
+  
+  
+    
+  }
+  
