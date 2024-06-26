@@ -1,0 +1,67 @@
+// src/components/CareerForm.scss
+
+.career-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 70px  auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  
+    h1 {
+      font-size: 2rem;
+      color: #8a685b;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+  
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+  
+      label {
+        display: block;
+        font-size: 0.9rem;
+        color: #333;
+        margin-bottom: 5px;
+      }
+  
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      .error {
+        color: red;
+        font-size: 0.8rem;
+        margin-top: 5px;
+      }
+    }
+  
+    .submit-button {
+      background-color: #8a685b;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #76594e;
+      }
+    }
+  }
+  

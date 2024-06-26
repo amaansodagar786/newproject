@@ -33,6 +33,7 @@ const SliderComponant = () => {
   ];
 
   return (
+    <>
     <div className="slider-container">
       <h2>Our NOAH Workforce Development System Superstars Gallery</h2>
       <Slider {...settings}>
@@ -43,6 +44,22 @@ const SliderComponant = () => {
         ))}
       </Slider>
     </div>
+
+    <div className="quote-container">
+      <div className="quote-content">
+        <blockquote>
+          "Beating the competition is relatively easy. Beating yourself is a never-ending commitment."
+        </blockquote>
+        <p>- Phil Knight</p>
+      </div>
+      <div className="quote-image">
+        <img src={img01} alt="Writing" />
+      </div>
+    </div>
+
+
+    </>
+
   )
 }
 
