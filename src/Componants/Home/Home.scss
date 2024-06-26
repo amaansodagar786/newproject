@@ -1,112 +1,65 @@
-.home {
-  margin-top: 70px;
-   width: 100%;
-   background-color: #000;
+// .home {
+//   margin-top: 70px;
+//   width: 100%;
+//   background-color: #000;
 
-    .main-section {
-        margin: 10px auto;
-        width: 90%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 70vh; // Full viewport height
-      
-      .image-section {
-        flex: 1;
-        
-        .building-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-      
-      .text-section {
-        flex: 1;
-        // background-color: #000; // Black background
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        text-align: center;
-  
-        h1 {
-          font-size: 2.5rem;
-          margin: 0;
-        }
-  
-        p {
-          font-size: 1.2rem;
-        }
-  
-        button {
-          margin-top: 20px;
-          padding: 10px 20px;
-          font-size: 1rem;
-          color: black;
-          background-color: #c8a381; // Button background color
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-  
-          &:hover {
-            background-color: #b58a65; // Hover color
-          }
-        }
-      }
-    }
-  }
-  
+//   .main-section {
+//     margin: 10px auto;
+//     width: 90%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 70vh; // Full viewport height
+
+//     .image-section {
+//       flex: 1;
+//       height: 450px;
+
+//       .building-image {
+//         // border-radius: 10px;
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//     }
+
+//     .text-section {
+//       flex: 1;
+//       // background-color: #000; // Black background
+//       color: white;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+//       padding: 20px;
+//       text-align: center;
+
+//       h1 {
+//         font-size: 2.5rem;
+//         margin: 0;
+//       }
+
+//       p {
+//         font-size: 1.2rem;
+//       }
+
+//       button {
+//         margin-top: 20px;
+//         padding: 10px 20px;
+//         font-size: 1rem;
+//         color: black;
+//         background-color: #c8a381; // Button background color
+//         border: none;
+//         border-radius: 5px;
+//         cursor: pointer;
+
+//         &:hover {
+//           background-color: #b58a65; // Hover color
+//         }
+//       }
+//     }
+//   }
+// }
+
 //   HOME1
 
-.about-us {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-  
-    h2 {
-      font-size: 2.5rem;
-      color: #a4876a;
-      margin-bottom: 40px;
-    }
-  
-    .content {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      
-      .card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin: 20px;
-        flex: 0 1 30%;
-        max-width: 300px;
-        text-align: center;
-  
-        .card-image {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-bottom: 20px;
-        }
-  
-        h3 {
-          font-size: 1.5rem;
-          margin-bottom: 15px;
-          color: #333;
-        }
-  
-        p {
-          font-size: 1rem;
-          color: #666;
-        }
-      }
-    }
-  }
-  
