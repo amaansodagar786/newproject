@@ -65,6 +65,10 @@
 }
 
 @media (max-width: 480px) {
+.home{
+height: fit-content;
+padding: 5px;
+  margin-top: 90px;
 
   // Mobile view
   .main-section {
@@ -92,7 +96,7 @@
     }
   }
 }
-
+}
 
 @media (max-width: 768px) { // Tablet view
   .main-section {
