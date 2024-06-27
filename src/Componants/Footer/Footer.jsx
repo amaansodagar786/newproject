@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p className='upperline'> Workforce Development System</p>
+        <p className='upperline'>NOAH Workforce Development System</p>
         <p> <FaLocationDot /> &nbsp; Vasna, Vadodara, Gujarat, India</p>
         <p><FaPhoneAlt /> &nbsp; +91 9510287060</p>
         <p><FaEnvelope /> &nbsp; info@noahwds.com </p>

@@ -14,8 +14,9 @@ import Gototop from './Componants/Gototop/Gototop';
 import Nopaage from './Componants/NoPage/Nopage';
 import Applications from './Componants/NoPage/Applications';
 import Values from './Componants/About/Values/Values';
-import Event from './Componants/Services/EventManage/Event';
+// import Event from './Componants/Services/EventManage/Event';
 import Insurance from './Componants/Services/Insurance/Insurance';
+import Eventmanage from './Componants/Services/EventManage/Event';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
             <Route path='/contact' element= {<Contact/>}/>
             <Route path='/slider' element= {<SliderComponant/>}/>
             <Route path='/hrconsultancy' element= {<Hrconsultancy/>}/>
-            <Route path='/eventmanagement' element= {<Event/>}/>
+            <Route path='/eventmanage' element= {<Eventmanage/>}/>
             <Route path='/insurance' element= {<Insurance/>}/>
             <Route path="*" element={<Nopaage />} />
             <Route path="/applications" element={<Applications />} />

@@ -43,7 +43,6 @@ const Values = () => {
 
       <div className="section">
         <h2>How we Manage</h2>
-        <p>NWDS Proposed Team Structure:</p>
         <ul className="team-list">
           <li>Recruiter Team</li>
           <li>Legal & Compliance</li>

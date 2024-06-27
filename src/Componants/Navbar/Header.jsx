@@ -89,7 +89,7 @@ const Header = () => {
               <Link to='/hrconsultancy'>HR Consultancy</Link>
             </li>
             <li onClick={() => hideMenu('service2')}>
-              <Link to='/eventmanagement'>Event Management</Link>
+              <Link to='/eventmanage'>Event Management</Link>
             </li>
             <li onClick={() => hideMenu('service3')}>
               <Link to='/insurance'>Insurance</Link>
