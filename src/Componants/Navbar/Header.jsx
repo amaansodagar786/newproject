@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoCloseOutline } from 'react-icons/io5';
 import logo from '../../Images/Logo/NWDS-Logo-CDR.png';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activestate, setActivestate] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Ensure the dropdown is open on mobile view
+    if (window.innerWidth <= 800) {
+      setDropdownOpen(true);
+    }
+  }, [menuOpen]);
 
   const showMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,6 +39,9 @@ const Header = () => {
   };
 
   const toggleDropdown = (event) => {
+    if (window.innerWidth <= 800) {
+      return; // Do nothing on mobile view
+    }
     event.stopPropagation(); // Prevent event bubbling to avoid closing the dropdown
     setDropdownOpen(!dropdownOpen);
     setActivestate('services');
@@ -68,8 +79,12 @@ const Header = () => {
           className={activestate === 'services' ? 'active' : ''}
           onClick={toggleDropdown}
         >
-          <Link> <span className='service'>Services</span> </Link>
-          <ul className={`Dropdown ${dropdownOpen ? 'show' : ''}`}>
+          <Link>
+            <span className='service1'>
+              Services <IoIosArrowDown className='serviceicon' />
+            </span>
+          </Link>
+          <ul className={`Dropdown ${dropdownOpen ? 'show' : ''} ${window.innerWidth <= 800 ? 'show-mobile' : ''}`}>
             <li onClick={() => hideMenu('service1')}>
               <Link to='/hrconsultancy'>HR Consultancy</Link>
             </li>

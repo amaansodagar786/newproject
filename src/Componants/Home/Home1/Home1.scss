@@ -99,6 +99,10 @@ padding: 5px;
 }
 
 @media (max-width: 768px) { // Tablet view
+  .home{
+    height: fit-content;
+    padding: 5px;
+ 
   .main-section {
     flex-direction: column;
     height: auto;
@@ -122,4 +126,5 @@ padding: 5px;
       }
     }
   }
+}
 }
