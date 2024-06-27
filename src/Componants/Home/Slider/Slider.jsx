@@ -35,7 +35,7 @@ const SliderComponant = () => {
   return (
     <>
     <div className="slider-container">
-      <h2>Our NOAH Workforce Development System Superstars Gallery</h2>
+      <h2>OUR NOAH WORKFORCE DEVELOPMENT SYSTEM SUPERSTARS GALLERY</h2>
       <Slider {...settings}>
         {slidesData.map(slide => (
           <div key={slide.id} className="slide">

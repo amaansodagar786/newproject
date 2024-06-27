@@ -4,7 +4,7 @@ import './Hrconsultancy.scss';
 const Hrconsultancy = () => {
   return (
     <div className="hrconsultancy">
-      <h1 className="title">Join Top Companies with Noah Workforce Development System</h1>
+      <h1 className="title">JOIN TOP COMPANIES WITH NOAH WORKFORCE DEVELOPMENT SYSTEM</h1>
       <div className="services">
         <div className="service">
           <h2>Company Partnerships</h2>
