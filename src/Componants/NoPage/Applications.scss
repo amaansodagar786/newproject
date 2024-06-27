@@ -1,0 +1,56 @@
+// Define variables
+$primary-color: #8b68ad;
+$secondary-color: #0c0707;
+$background-color: #fcfbfb;
+$text-color: #1a1414;
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+// Main styles for the component
+.Applications {
+  font-family: 'Mukta', sans-serif;
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 20px;
+
+      div {
+        background-color: $background-color;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        span {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        button {
+          background-color: $primary-color;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}

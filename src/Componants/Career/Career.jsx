@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './Career.scss';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const CareerForm = () => {
+  const [open, setOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState('success');
+  const [loading, setLoading] = useState(false);
+
   const validationSchema = Yup.object({
     name: Yup.string().required('Required'),
     phone: Yup.string().required('Required'),
@@ -12,6 +23,49 @@ const CareerForm = () => {
     message: Yup.string(),
     resume: Yup.mixed().required('Required'),
   });
+
+  const handleSubmit = async (values, { resetForm }) => {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('name', values.name);
+    formData.append('phone', values.phone);
+    formData.append('email', values.email);
+    formData.append('position', values.position);
+    formData.append('message', values.message);
+    formData.append('resume', values.resume);
+
+    try {
+      const response = await fetch('http://localhost:3035/career', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSnackbarMessage('Application submitted successfully!');
+        setSnackbarSeverity('success');
+        resetForm();
+      } else {
+        setSnackbarMessage('Failed to submit application. Please try again.');
+        setSnackbarSeverity('error');
+      }
+    } catch (error) {
+      setSnackbarMessage('An error occurred. Please try again.');
+      setSnackbarSeverity('error');
+      console.error('Error:', error);
+    } finally {
+      setLoading(false);
+      setOpen(true);
+    }
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
 
   return (
     <div className="career-form">
@@ -22,9 +76,7 @@ const CareerForm = () => {
       <Formik
         initialValues={{ name: '', phone: '', email: '', position: '', message: '', resume: null }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
+        onSubmit={handleSubmit}
       >
         {({ setFieldValue }) => (
           <Form>
@@ -90,12 +142,28 @@ const CareerForm = () => {
                 <ErrorMessage name="resume" component="div" className="error" />
               </div>
             </div>
-            <button type="submit" className="submit-button">
-              Submit Application
-            </button>
+            {loading ? (
+              <button type="submit" className="submit-button" disabled>
+                Sending...
+              </button>
+            ) : (
+              <button type="submit" className="submit-button">
+                Submit Application
+              </button>
+            )}
           </Form>
         )}
       </Formik>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity={snackbarSeverity}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

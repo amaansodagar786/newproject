@@ -11,6 +11,8 @@ import Header from './Componants/Navbar/Header';
 import SliderComponant from './Componants/Home/Slider/Slider';
 import Hrconsultancy from './Componants/Services/HR Consultancy/Hrconsultancy';
 import Gototop from './Componants/Gototop/Gototop';
+import Nopaage from './Componants/NoPage/Nopage';
+import Applications from './Componants/NoPage/Applications';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path='/contact' element= {<Contact/>}/>
             <Route path='/slider' element= {<SliderComponant/>}/>
             <Route path='/hrconsultancy' element= {<Hrconsultancy/>}/>
+            <Route path="*" element={<Nopaage />} />
+            <Route path="/applications" element={<Applications />} />
 
             </Routes>
             <Footer/>
