@@ -1,0 +1,58 @@
+.vision-container {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+  
+    .vision-content {
+      max-width: 800px;
+      margin: 0 auto;
+  
+      h2 {
+        font-family: 'Righteous';
+        font-weight: 300;
+        font-size: 2.5rem;
+        color: #a4876a;
+        margin-bottom: 40px;
+      }
+  
+      .vision-text {
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #666;
+  
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .vision-content {
+        padding: 20px;
+  
+        h2 {
+          font-size: 2rem;
+        }
+  
+        .vision-text {
+          font-size: 1rem;
+        }
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .vision-content {
+        padding: 10px;
+  
+        h2 {
+          font-size: 1.8rem;
+        }
+  
+        .vision-text {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  

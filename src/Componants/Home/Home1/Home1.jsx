@@ -11,7 +11,7 @@ const Home1 = () => {
         </div>
         <div className="text-section">
           <h1>FIND YOUR DREAM JOB TODAY</h1>
-          <p>Connecting top talent with leading companies.</p>
+          <p>Beat the Competition by beating yourself.</p>
           <button>SEARCH JOBS</button>
         </div>
       </div>

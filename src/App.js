@@ -13,6 +13,7 @@ import Hrconsultancy from './Componants/Services/HR Consultancy/Hrconsultancy';
 import Gototop from './Componants/Gototop/Gototop';
 import Nopaage from './Componants/NoPage/Nopage';
 import Applications from './Componants/NoPage/Applications';
+import Values from './Componants/About/Values/Values';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='/hrconsultancy' element= {<Hrconsultancy/>}/>
             <Route path="*" element={<Nopaage />} />
             <Route path="/applications" element={<Applications />} />
+            <Route path="/values" element={<Values />} />
 
             </Routes>
             <Footer/>

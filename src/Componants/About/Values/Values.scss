@@ -1,0 +1,72 @@
+.values-container {
+    margin-top: 100px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+  
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+  
+      h2 {
+        font-family: 'Righteous';
+        font-weight: 300;
+        font-size: 2.5rem;
+        color: #a4876a;
+        margin-bottom: 20px;
+      }
+  
+      .value-list, .strength-list, .team-list {
+        list-style-type: none;
+        padding-left: 0;
+        text-align: left;
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 20px;
+  
+        li {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+  
+          
+        }
+      }
+  
+      p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 20px;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .section {
+        padding: 20px;
+  
+        h2 {
+          font-size: 2rem;
+        }
+  
+        .value-list, .strength-list, .team-list {
+          font-size: 1rem;
+        }
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .section {
+        padding: 10px;
+  
+        h2 {
+          font-size: 1.8rem;
+        }
+  
+        .value-list, .strength-list, .team-list {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  
