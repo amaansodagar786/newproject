@@ -1,6 +1,8 @@
 import React from 'react'
 import './Abouthome.scss' ;
-import img1 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
+import img1 from '../../../Images/Abouthome1.webp';
+import img2 from '../../../Images/Abouthome2.webp';
+import img3 from '../../../Images/Abouthome3.webp' ;
 
 
 const Abouthome = () => {
@@ -16,14 +18,14 @@ const Abouthome = () => {
           </p>
         </div>
         <div className="card">
-          <img src={img1} alt="Our Specialities" className="card-image" />
+          <img src={img2} alt="Our Specialities" className="card-image" />
           <h3>Our Specialties</h3>
           <p>
             We specialize in a variety of industries, including healthcare, finance, IT, and engineering. Our recruiters have in-depth knowledge of each industry and can help match candidates with job opportunities that align with their skills and experience.
           </p>
         </div>
         <div className="card">
-          <img src={img1} alt="Our Commitment" className="card-image" />
+          <img src={img3} alt="Our Commitment" className="card-image" />
           <h3>Our Commitment</h3>
           <p>
             At Noah Workforce Development System, we are committed to providing exceptional service to both job seekers and employers. We believe in building long-term relationships with our clients and candidates, and we work tirelessly to ensure their success.

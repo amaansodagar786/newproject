@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Insurance.scss';
-import image1 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import image2 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import image3 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import image4 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import image5 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
+import image1 from '../../../Images/insurance1.jpg';
+import image2 from '../../../Images/insurance2.jpg';
+import image3 from '../../../Images/insurance3.webp';
+import image4 from '../../../Images/insurance4.jpg';
+import image5 from '../../../Images/insurance5.jpg';
 
 const Insurance = () => {
   const [activeSection, setActiveSection] = useState(1);

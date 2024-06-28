@@ -3,11 +3,13 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Slider.scss';
-import img01 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import img02 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import img03 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import img04 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
-import img05 from '../../../Images/Logo/WhatsApp Image 2024-06-25 at 23.19.05_1778b772.jpg';
+import img01 from '../../../Images/slider1.webp';
+import img02 from '../../../Images/slider2.webp';
+import img03 from '../../../Images/slider3.webp';
+import img04 from '../../../Images/slider4.jpeg';
+import img05 from '../../../Images/slider5.jpeg' ;
+import img06 from '../../../Images/slider home.webp' ;
+
 
 const SliderComponant = () => {
 
@@ -53,7 +55,7 @@ const SliderComponant = () => {
         <p>- Phil Knight</p>
       </div>
       <div className="quote-image">
-        <img src={img01} alt="Writing" />
+        <img src={img06} alt="Writing" />
       </div>
     </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Eventmanage.scss';
-import image from '../../../Images/Logo/newww.jpg';
+import event1 from '../../../Images/event1.webp';
+import event2 from '../../../Images/event2.jpg';
 
 const Eventmanage = () => {
   return (
@@ -12,7 +13,7 @@ const Eventmanage = () => {
     </div>
       <div className="events-section">
         <div className="events-image">
-          <img src={image} alt="Event" />
+          <img src={event1} alt="Event" />
         </div>
         <div className="events-content">
           <p>
@@ -25,6 +26,9 @@ const Eventmanage = () => {
       </div>
 
       <div className="events-section reverse">
+      <div className="events-image">
+          <img src={event2} alt="Event" />
+        </div>
         <div className="events-content">
           <p>
             Classy soirees to black-tie events, treasure-hunts, outbound training camps for employees to picnics and ‘Internal Awards’ ceremonies, we can also customise and provide you with creative ideas and solutions to suit your budget and office culture.
@@ -33,9 +37,7 @@ const Eventmanage = () => {
             With our overarching experience in events, you can sit back and enjoy your events and reap the benefits. At Acentering we ensure the details are planned to a T and there is no room for errors.
           </p>
         </div>
-        <div className="events-image">
-          <img src={image} alt="Event" />
-        </div>
+        
       </div>
     </>
   );

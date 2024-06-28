@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import './Footer.scss';
-import { FaLocationDot } from 'react-icons/fa6';
-
+import { FaLocationDot  } from 'react-icons/fa6';
+import infinityLogo from '../../Images/Logo/newww.jpg'; 
 const Footer = () => {
   return (
     <footer className="footer">
@@ -14,6 +14,13 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>&copy; 2024 Noah Workforce Development System - All Rights Reserved.</p>
+        <div className="developed-by">
+          
+          <a href="https://www.instagram.com/amaan_sodagar/" target="_blank" rel="noopener noreferrer">
+          <img src={infinityLogo} alt="Infinity Logo" className="infinity-logo" />
+          <p>Developed by Infinity</p>
+          </a>
+        </div>
       </div>
     </footer>
   );

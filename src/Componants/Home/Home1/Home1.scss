@@ -12,21 +12,20 @@
     gap: 40px;
     height: 70vh; // Full viewport height
 
-    .image-section {
+    .video-section {
       flex: 1;
       height: 450px;
 
-      .building-image {
-        // border-radius: 10px;
+      .home-video {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 10px;
       }
     }
 
     .text-section {
       flex: 1;
-      // background-color: #000; // Black background
       color: white;
       display: flex;
       flex-direction: column;
@@ -51,13 +50,13 @@
         padding: 10px 20px;
         font-size: 1rem;
         color: black;
-        background-color: #c8a381; // Button background color
+        background-color: #c8a381;
         border: none;
         border-radius: 5px;
         cursor: pointer;
 
         &:hover {
-          background-color: #b58a65; // Hover color
+          background-color: #b58a65;
         }
       }
     }
@@ -65,66 +64,72 @@
 }
 
 @media (max-width: 480px) {
-.home{
-height: fit-content;
-padding: 5px;
-  // margin-top: 90px;
-
-  // Mobile view
-  .main-section {
-    flex-direction: column;
-    height: auto;
-
-    .image-section {
-      padding-top: 20px;
-      height: 200px;
-    }
-
-    .text-section {
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      p {
-        font-size: 0.9rem;
-      }
-
-      button {
-        font-size: 0.8rem;
-        padding: 8px 16px;
-      }
-    }
-  }
-}
-}
-
-@media (max-width: 768px) { // Tablet view
-  .home{
+  .home {
     height: fit-content;
     padding: 5px;
- 
-  .main-section {
-    flex-direction: column;
-    height: auto;
 
-    .image-section {
-      padding-top: 20px;
-      height: 300px;
-    }
+    .main-section {
+      flex-direction: column;
+      height: auto;
 
-    .text-section {
-      h1 {
-        font-size: 2rem;
+      .video-section {
+        padding-top: 20px;
+        height: 200px;
+
+        .home-video {
+          height: 100%;
+        }
       }
 
-      p {
-        font-size: 1rem;
-      }
+      .text-section {
+        h1 {
+          font-size: 1.5rem;
+        }
 
-      button {
-        font-size: 0.9rem;
+        p {
+          font-size: 0.9rem;
+        }
+
+        button {
+          font-size: 0.8rem;
+          padding: 8px 16px;
+        }
       }
     }
   }
 }
+
+@media (max-width: 768px) {
+  .home {
+    height: fit-content;
+    padding: 5px;
+
+    .main-section {
+      flex-direction: column;
+      height: auto;
+
+      .video-section {
+        padding-top: 20px;
+        height: 300px;
+
+        .home-video {
+          height: 100%;
+        }
+      }
+
+      .text-section {
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
 }

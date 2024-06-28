@@ -22,12 +22,13 @@ const Contact = () => {
     name: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email format').required('Required'),
     service: Yup.string().required('Required'),
+    mobile: Yup.string().required('Required'),
     message: Yup.string(),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      setLoad(true)
+      setLoad(true);
       const response = await fetch('http://localhost:3035/contact', {
         method: 'POST',
         headers: {
@@ -42,20 +43,17 @@ const Contact = () => {
         setSnackbarMessage('Message sent successfully!');
         setSnackbarSeverity('success');
         resetForm();
-        setLoad(false)
       } else {
         setSnackbarMessage('Failed to send message. Please try again.');
         setSnackbarSeverity('error');
-        setLoad(false)
       }
     } catch (error) {
       setSnackbarMessage('An error occurred. Please try again.');
       setSnackbarSeverity('error');
       console.error('Error:', error);
-      setLoad(false)
     } finally {
       setOpen(true);
-      setLoad(false)
+      setLoad(false);
     }
   };
 
@@ -72,7 +70,7 @@ const Contact = () => {
         <h1>Contact Us</h1>
         <h2>Drop us a line!</h2>
         <Formik
-          initialValues={{ name: '', email: '', service: '', message: '' }}
+          initialValues={{ name: '', email: '', service: '', mobile: '', message: '' }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
@@ -86,25 +84,37 @@ const Contact = () => {
               <ErrorMessage name="email" component="div" className="error" />
             </div>
             <div className="form-group">
-              <Field type="text" id="service" name="service" placeholder="Inquiry for Which Service*" />
+              <Field type="text" id="mobile" name="mobile" placeholder="Mobile Number*" />
+              <ErrorMessage name="mobile" component="div" className="error" />
+            </div>
+            <div className="form-group">
+            <Field
+                as="select"
+                id="service"
+                name="service"
+                placeholder="Inquiry for Which Service*"
+                className="select-field" // Add any additional styling class if needed
+              >
+                <option value="" disabled hidden>Select Service</option>
+                <option value="HR Consultancy">HR Consultancy</option>
+                <option value="Event Management">Event Management</option>
+                <option value="Insurance">Insurance</option>
+              </Field>
               <ErrorMessage name="service" component="div" className="error" />
             </div>
+            
             <div className="form-group">
               <Field as="textarea" id="message" name="message" placeholder="Message" />
             </div>
-            {
-              load ? (
-                <button type="submit" className="submit-button" disabled>
-                  Sending...
-                </button>
-              ) : (
-                <button type="submit" className="submit-button">
-                  Send
-                </button>
-              )
-            }
-
-
+            {load ? (
+              <button type="submit" className="submit-button" disabled>
+                Sending...
+              </button>
+            ) : (
+              <button type="submit" className="submit-button">
+                Send
+              </button>
+            )}
           </Form>
         </Formik>
       </div>
@@ -113,11 +123,9 @@ const Contact = () => {
         <p>We love our customers, so feel free to visit during normal business hours.</p>
         <address>
           <strong>Noah Workforce Development System</strong>
-
-          <p> <b><FaLocationDot /> :  </b>  Vasna, Vadodara, Gujarat, India </p>
-          <p> <b><IoIosCall /> : </b> +91-9510287060 </p>
-          <p> <b><MdEmail /> : </b> info@noahwds.com </p>
-
+          <p><b><FaLocationDot /> : </b> Vasna, Vadodara, Gujarat, India </p>
+          <p><b><IoIosCall /> : </b> +91-9510287060 </p>
+          <p><b><MdEmail /> : </b> info@noahwds.com </p>
         </address>
         <h3>Work Hours</h3>
         <p className='timings'>

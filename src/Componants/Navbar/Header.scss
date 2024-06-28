@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 
+
 .active {
-  background-color: #a4876ac9;
-  border-radius: 5px;
-  // color: blue;
+  color: blue;
+}
+
+.active::after {
+  width: 75%;
+  
 }
 
 .Navbar {
@@ -46,7 +50,7 @@
 }
 
 .NavbarLinks a {
-  color: #0c0707;
+  color: #0d0303c0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,7 +74,8 @@
   transform: translateX(-50%);
 }
 
-.NavbarLinks a:hover:after {
+.NavbarLinks a:hover::after,
+.NavbarLinks a.active::after {
   width: 75%;
 }
 
