@@ -8,7 +8,6 @@ import img02 from '../../../Images/slider2.webp';
 import img03 from '../../../Images/slider3.webp';
 import img04 from '../../../Images/slider4.jpeg';
 import img05 from '../../../Images/slider5.jpeg' ;
-import img06 from '../../../Images/slider home.webp' ;
 
 
 const SliderComponant = () => {
@@ -47,17 +46,7 @@ const SliderComponant = () => {
       </Slider>
     </div>
 
-    <div className="quote-container">
-      <div className="quote-content">
-        <blockquote>
-          "Beating the competition is relatively easy. Beating yourself is a never-ending commitment."
-        </blockquote>
-        <p>- Phil Knight</p>
-      </div>
-      <div className="quote-image">
-        <img src={img06} alt="Writing" />
-      </div>
-    </div>
+    
 
 
     </>

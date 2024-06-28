@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 
-
-.active {
-  color: blue;
-}
-
-.active::after {
-  width: 75%;
-  
-}
-
 .Navbar {
   background-color: #fcfbfb;
   display: flex;
@@ -35,48 +25,57 @@
   padding-right: 7%;
   font-weight: 500;
   font-size: 22px;
-}
 
-.NavbarLinks li {
-  font-family: 'Mukta', sans-serif;
-  font-weight: 450;
-  font-style: normal;
-  padding: 2px 20px;
-  list-style-type: none;
+  li {
+    font-family: 'Mukta', sans-serif;
+    font-weight: 450;
+    font-style: normal;
+    padding: 2px 20px;
+    list-style-type: none;
 
-  @media (max-width: 500px) {
-    font-weight: 300;
+    @media (max-width: 500px) {
+      font-weight: 300;
+    }
+
+    &.active a {
+      color: rgb(152, 52, 52);
+    }
+
+    a {
+      color: #0d0303c0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      width: 95%;
+      padding: 2px 7px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+
+      // &:hover,
+      // &.active {
+      //   color: blue;
+      // }
+
+      &::after {
+        background-color: #8b68ad;
+        content: "";
+        position: absolute;
+        height: 3px;
+        left: 45%;
+        bottom: 0;
+        width: 0px;
+        border-radius: 2px;
+        transition: 0.4s;
+        transform: translateX(-50%);
+      }
+
+      &:hover::after,
+      &.active::after {
+        width: 75%;
+      }
+    }
   }
-}
-
-.NavbarLinks a {
-  color: #0d0303c0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  width: 95%;
-  padding: 2px 7px;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-}
-
-.NavbarLinks a::after {
-  background-color: #8b68ad;
-  content: "";
-  position: absolute;
-  height: 3px;
-  left: 45%;
-  bottom: 0;
-  width: 0px;
-  border-radius: 2px;
-  transition: 0.4s;
-  transform: translateX(-50%);
-}
-
-.NavbarLinks a:hover::after,
-.NavbarLinks a.active::after {
-  width: 75%;
 }
 
 .service1 {
