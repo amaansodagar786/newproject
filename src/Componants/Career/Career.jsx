@@ -24,25 +24,22 @@ const CareerForm = () => {
     resume: Yup.mixed().required('Required'),
   });
 
-  const handleSubmit = async (values, { resetForm }) => {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('name', values.name);
-    formData.append('phone', values.phone);
-    formData.append('email', values.email);
-    formData.append('position', values.position);
-    formData.append('message', values.message);
-    formData.append('resume', values.resume);
-
+  // Function to handle API call on submit
+  const handleFormSubmit = async (values, { resetForm }) => {
     try {
-      const response = await fetch('https://newprojectbackend.vercel.app/career', {
-        method: 'POST',
-        body: formData,
-      });
+      // Your form data preparation
+      const formData = new FormData();
+      formData.append('name', values.name);
+      formData.append('phone', values.phone);
+      formData.append('email', values.email);
+      formData.append('position', values.position);
+      formData.append('message', values.message);
+      formData.append('resume', values.resume);
 
-      const data = await response.json();
+      // API call to submit the form data
+      const response = await submitApplication(formData);
 
-      if (data.success) {
+      if (response.success) {
         setSnackbarMessage('Application submitted successfully!');
         setSnackbarSeverity('success');
         resetForm();
@@ -60,6 +57,25 @@ const CareerForm = () => {
     }
   };
 
+  // Function to submit application data via API
+  const submitApplication = async (formData) => {
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://newprojectbackend.vercel.app/career', {
+        method: 'POST',
+        body: formData,
+      });
+
+      return await response.json();
+    } catch (error) {
+      console.error('API Error:', error);
+      throw new Error('Failed to submit application');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
@@ -72,11 +88,10 @@ const CareerForm = () => {
       <h1>We're Hiring!</h1>
       <h2>Join Our Team</h2>
       <p>If you're interested in one of our open positions, start by applying here and attaching your resume.</p>
-      <p className='apply'>Apply Now</p>
       <Formik
         initialValues={{ name: '', phone: '', email: '', position: '', message: '', resume: null }}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+        onSubmit={handleFormSubmit} // Use handleFormSubmit function for form submission
       >
         {({ setFieldValue }) => (
           <Form>
