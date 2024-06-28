@@ -6,12 +6,12 @@
   position: fixed;
   width: 100%;
   z-index: 2;
-  height: 70px; /* Adjust height as needed */
+  height: 70px;
   top: 0;
 
   .Logo {
     cursor: pointer;
-    height: 65px; /* Adjust height as needed */
+    height: 65px;
     margin-left: 20px;
   }
 
@@ -57,33 +57,10 @@
         letter-spacing: 0.5px;
         text-decoration: none;
       }
-
-      .ServicesDropdown {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 20px;
-
-        &.showServices {
-          display: flex;
-        }
-
-        li {
-          padding: 5px 0;
-        }
-      }
     }
   }
 
   &.no-scroll {
     overflow: hidden;
-  }
-
-  @media screen and (max-width: 768px) {
-    .NavbarLinks {
-      li a::after {
-        width: 0px; // Adjust width to 0px in mobile view
-      }
-    }
   }
 }

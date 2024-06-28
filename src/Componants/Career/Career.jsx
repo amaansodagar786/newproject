@@ -24,40 +24,6 @@ const CareerForm = () => {
     resume: Yup.mixed().required('Required'),
   });
 
-  // Function to handle API call on submit
-  const handleFormSubmit = async (values, { resetForm }) => {
-    try {
-      // Your form data preparation
-      const formData = new FormData();
-      formData.append('name', values.name);
-      formData.append('phone', values.phone);
-      formData.append('email', values.email);
-      formData.append('position', values.position);
-      formData.append('message', values.message);
-      formData.append('resume', values.resume);
-
-      // API call to submit the form data
-      const response = await submitApplication(formData);
-
-      if (response.success) {
-        setSnackbarMessage('Application submitted successfully!');
-        setSnackbarSeverity('success');
-        resetForm();
-      } else {
-        setSnackbarMessage('Failed to submit application. Please try again.');
-        setSnackbarSeverity('error');
-      }
-    } catch (error) {
-      setSnackbarMessage('Please try again.');
-      setSnackbarSeverity('error');
-      console.error('Error:', error);
-    } finally {
-      setLoading(false);
-      setOpen(true);
-    }
-  };
-
-  // Function to submit application data via API
   const submitApplication = async (formData) => {
     setLoading(true);
 
@@ -67,13 +33,36 @@ const CareerForm = () => {
         body: formData,
       });
 
-      return await response.json();
+      const data = await response.json();
+
+      if (data.success) {
+        setSnackbarMessage('Application submitted successfully!');
+        setSnackbarSeverity('success');
+      } else {
+        setSnackbarMessage('Failed to submit application. Please try again.');
+        setSnackbarSeverity('error');
+      }
     } catch (error) {
       console.error('API Error:', error);
-      throw new Error('Failed to submit application');
+      setSnackbarMessage('An error occurred. Please try again.');
+      setSnackbarSeverity('error');
     } finally {
       setLoading(false);
+      setOpen(true);
     }
+  };
+
+  const handleFormSubmit = async (values, { resetForm }) => {
+    const formData = new FormData();
+    formData.append('name', values.name);
+    formData.append('phone', values.phone);
+    formData.append('email', values.email);
+    formData.append('position', values.position);
+    formData.append('message', values.message);
+    formData.append('resume', values.resume);
+
+    await submitApplication(formData);
+    resetForm();
   };
 
   const handleClose = (event, reason) => {
@@ -91,7 +80,7 @@ const CareerForm = () => {
       <Formik
         initialValues={{ name: '', phone: '', email: '', position: '', message: '', resume: null }}
         validationSchema={validationSchema}
-        onSubmit={handleFormSubmit} // Use handleFormSubmit function for form submission
+        onSubmit={handleFormSubmit}
       >
         {({ setFieldValue }) => (
           <Form>

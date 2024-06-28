@@ -16,9 +16,8 @@ const Footer = () => {
         <p>&copy; 2024 Noah Workforce Development System - All Rights Reserved.</p>
         <div className="developed-by">
           
-          <a href="https://www.instagram.com/amaan_sodagar/" target="_blank" rel="noopener noreferrer">
-          <img src={infinityLogo} alt="Infinity Logo" className="infinity-logo" />
-          <p>Developed by Infinity</p>
+          <a href="https://www.instagram.com/infinity.incorp/" target="_blank" rel="noopener noreferrer">
+          <p>Developed by ∞ </p>
           </a>
         </div>
       </div>

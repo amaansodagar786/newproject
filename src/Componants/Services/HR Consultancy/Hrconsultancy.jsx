@@ -1,6 +1,14 @@
 import React from 'react';
 import './Hrconsultancy.scss';
-import image from '../../../Images/Logo/newww.jpg'; // Using the same image for consistency
+import image from '../../../Images/Logo/newww.jpg'; 
+import hr1 from '../../../Images/company partnership.jpg';
+
+import hr2 from '../../../Images/resume review.jpg';
+import hr3 from '../../../Images/interview tips.jpg';
+import hr4 from '../../../Images/company partnership.jpg';
+import hr5 from '../../../Images/networking event.jpg';
+import hr6 from '../../../Images/job application.jpg';
+
 
 const Hrconsultancy = () => {
   return (
@@ -17,7 +25,7 @@ const Hrconsultancy = () => {
             </p>
           </div>
           <div className="service-image">
-            <img src={image} alt="Service" />
+            <img src={hr1} alt="Service" />
           </div>
         </div>
 
@@ -29,7 +37,7 @@ const Hrconsultancy = () => {
             </p>
           </div>
           <div className="service-image">
-            <img src={image} alt="Service" />
+            <img src={hr2} alt="Service" />
           </div>
         </div>
 
@@ -41,7 +49,7 @@ const Hrconsultancy = () => {
             </p>
           </div>
           <div className="service-image">
-            <img src={image} alt="Service" />
+            <img src={hr3} alt="Service" />
           </div>
         </div>
 
@@ -53,7 +61,7 @@ const Hrconsultancy = () => {
             </p>
           </div>
           <div className="service-image">
-            <img src={image} alt="Service" />
+            <img src={hr4} alt="Service" />
           </div>
         </div>
 
@@ -65,7 +73,7 @@ const Hrconsultancy = () => {
             </p>
           </div>
           <div className="service-image">
-            <img src={image} alt="Service" />
+            <img src={hr5} alt="Service" />
           </div>
         </div>
 
@@ -77,7 +85,7 @@ const Hrconsultancy = () => {
             </p>
           </div>
           <div className="service-image">
-            <img src={image} alt="Service" />
+            <img src={hr6} alt="Service" />
           </div>
         </div>
       </div>

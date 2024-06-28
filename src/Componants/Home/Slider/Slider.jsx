@@ -3,11 +3,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Slider.scss';
-import img01 from '../../../Images/slider1.webp';
-import img02 from '../../../Images/slider2.webp';
-import img03 from '../../../Images/slider3.webp';
-import img04 from '../../../Images/slider4.jpeg';
-import img05 from '../../../Images/slider5.jpeg' ;
+import img01 from '../../../Images/slider1.jpg';
+import img02 from '../../../Images/slider2.jpg';
+import img03 from '../../../Images/slider3.jpg';
+import img04 from '../../../Images/slider4.jpg';
+import img05 from '../../../Images/slider5.jpg' ;
 
 
 const SliderComponant = () => {

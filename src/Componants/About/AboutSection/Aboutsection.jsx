@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutSection.scss';
-import image from '../../../Images/Logo/newww.jpg';
 import { useNavigate } from 'react-router-dom';
+import about3 from '../../../Images/3.jpg';
 
 const AboutSection = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const AboutSection = () => {
   return (
     <div className="about-section">
       <div className="about-image">
-        <img src={image} alt="Discussion" />
+        <img src={about3} alt="Discussion" />
       </div>
       <div className="about-content">
         <h1>FIND YOUR DREAM JOB WITH NOAH WORKFORCE DEVELOPMENT SYSTEM</h1>

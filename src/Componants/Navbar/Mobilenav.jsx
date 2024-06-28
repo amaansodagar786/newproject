@@ -7,7 +7,6 @@ import './MobileNavbar.scss';
 
 const MobileNavbar = ({ activeState, setActiveState }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false); // State to manage expanded services
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,15 +39,6 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
     setActiveState(id);
   };
 
-  const toggleServices = () => {
-    setServicesOpen(!servicesOpen);
-  };
-
-  const handleServiceClick = (id) => {
-    hideMenu(id); // Hide menu when a service link is clicked
-    setServicesOpen(false); // Close the services dropdown
-  };
-
   return (
     <nav className='MobileNavbar'>
       <img
@@ -78,20 +68,23 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
         <li
           id='services'
           className={activeState === 'services' ? 'active' : ''}
-          onClick={toggleServices} // Toggle services visibility on click
+          onClick={() => hideMenu('services')}
         >
-          <Link to='#'>Services</Link>
-          <ul className={`ServicesDropdown ${servicesOpen ? 'showServices' : ''}`}>
-            <li onClick={() => handleServiceClick('hrconsultancy')}>
-              <Link to='/hrconsultancy'>HR Consultancy</Link>
-            </li>
-            <li onClick={() => handleServiceClick('eventmanage')}>
-              <Link to='/eventmanage'>Event Management</Link>
-            </li>
-            <li onClick={() => handleServiceClick('insurance')}>
-              <Link to='/insurance'>Insurance</Link>
-            </li>
-          </ul>
+          <Link to='/hrconsultancy'>HR Consultancy</Link>
+        </li>
+        <li
+          id='eventmanage'
+          className={activeState === 'eventmanage' ? 'active' : ''}
+          onClick={() => hideMenu('eventmanage')}
+        >
+          <Link to='/eventmanage'>Event Management</Link>
+        </li>
+        <li
+          id='insurance'
+          className={activeState === 'insurance' ? 'active' : ''}
+          onClick={() => hideMenu('insurance')}
+        >
+          <Link to='/insurance'>Insurance</Link>
         </li>
         <li
           id='career'

@@ -63,7 +63,7 @@ const Insurance = () => {
           <div className="insurance-content">
             <p><b>PORTFOLIO MANAGEMENT</b><br /><br />
               The portfolio is a collection of investment instruments like shares, mutual funds, bonds, FDs and other cash equivalents, etc. Portfolio management is the art of selecting the right investment tools in the right proportion to generate optimum returns with a balance of risk from the investment made.<br /><br />
-              Health Insurance is a medical insurance policy that offers financial coverage for medical expenses when the policyholder is hospitalised. The health insurance plan ensures cashless treatment, reimbursement of medical expenses & day-care hospitalisation. Moreover, health insurance cost is subsidized to the policy holder in form of tax exemption under section 80D of Income Tax Act, 1961.</p>
+             </p>
           </div>
         </div>
       </div>

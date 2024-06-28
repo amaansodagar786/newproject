@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { IoIosArrowDown } from 'react-icons/io';
 import logo from '../../Images/Logo/NWDS-Logo-CDR.png';
 import './DesktopNavbar.scss';
+import { IoIosArrowDown } from 'react-icons/io';
 
-const DesktopNavbar = ({ activeState, setActiveState, toggleDropdown, dropdownOpen }) => {
+const DesktopNavbar = ({ activeState, setActiveState, toggleDropdown, dropdownOpen, setDropdownOpen }) => {
   const navigate = useNavigate();
 
   const navigateToHome = (id) => {
     navigate('/');
     setActiveState(id);
+  };
+
+  const handleLinkClick = (id) => {
+    setActiveState(id);
+    setDropdownOpen(false);  // Close the dropdown when any link is clicked
   };
 
   return (
@@ -24,14 +29,14 @@ const DesktopNavbar = ({ activeState, setActiveState, toggleDropdown, dropdownOp
         <li
           id='home'
           className={activeState === 'home' ? 'active' : ''}
-          onClick={() => setActiveState('home')}
+          onClick={() => handleLinkClick('home')}
         >
           <Link to='/'>Home</Link>
         </li>
         <li
           id='about'
           className={activeState === 'about' ? 'active' : ''}
-          onClick={() => setActiveState('about')}
+          onClick={() => handleLinkClick('about')}
         >
           <Link to='/about'>About</Link>
         </li>
@@ -41,18 +46,18 @@ const DesktopNavbar = ({ activeState, setActiveState, toggleDropdown, dropdownOp
           onClick={toggleDropdown}
         >
           <Link>
-            <span className='service1'>
-              Services <IoIosArrowDown className='serviceicon' />
+            <span className='service11'>
+              Services <span><IoIosArrowDown className='srvcicon' /></span>
             </span>
           </Link>
           <ul className={`Dropdown ${dropdownOpen ? 'show' : ''}`}>
-            <li onClick={() => setActiveState('service1')}>
+            <li onClick={() => handleLinkClick('service1')}>
               <Link to='/hrconsultancy'>HR Consultancy</Link>
             </li>
-            <li onClick={() => setActiveState('service2')}>
+            <li onClick={() => handleLinkClick('service2')}>
               <Link to='/eventmanage'>Event Management</Link>
             </li>
-            <li onClick={() => setActiveState('service3')}>
+            <li onClick={() => handleLinkClick('service3')}>
               <Link to='/insurance'>Insurance</Link>
             </li>
           </ul>
@@ -60,14 +65,14 @@ const DesktopNavbar = ({ activeState, setActiveState, toggleDropdown, dropdownOp
         <li
           id='career'
           className={activeState === 'career' ? 'active' : ''}
-          onClick={() => setActiveState('career')}
+          onClick={() => handleLinkClick('career')}
         >
           <Link to='/career'>Careers</Link>
         </li>
         <li
           id='contact'
           className={activeState === 'contact' ? 'active' : ''}
-          onClick={() => setActiveState('contact')}
+          onClick={() => handleLinkClick('contact')}
         >
           <Link to='/contact'>Contact</Link>
         </li>

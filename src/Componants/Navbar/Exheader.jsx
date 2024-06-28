@@ -37,6 +37,7 @@ const Exheader = () => {
           setActiveState={setActiveState}
           toggleDropdown={toggleDropdown}
           dropdownOpen={dropdownOpen}
+          setDropdownOpen={setDropdownOpen}  // Pass setDropdownOpen here
         />
       )}
     </>
