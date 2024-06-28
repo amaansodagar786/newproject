@@ -29,7 +29,7 @@ const Contact = () => {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       setLoad(true);
-      const response = await fetch('http://localhost:3035/contact', {
+      const response = await fetch('http://localhost:3037/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
