@@ -1,0 +1,83 @@
+// MobileNavbar.scss
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+.MobileNavbar {
+  background-color: #fcfbfb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  height: 70px;
+  top: 0;
+
+  .Logo {
+    cursor: pointer;
+    height: 60px;
+    margin-left: 20px;
+  }
+
+  .Hamburger {
+    font-size: 28px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .NavbarLinks {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fcfbfb;
+    z-index: 1;
+    padding: 10px 0;
+
+    &.showNavbar {
+      display: flex;
+    }
+
+    li {
+      font-family: 'Mukta', sans-serif;
+      font-weight: 450;
+      font-style: normal;
+      padding: 10px 20px;
+      list-style-type: none;
+      width: 100%;
+
+      &.active a {
+        color: rgb(52, 57, 152);
+      }
+
+      a {
+        color: #0d0303c0;
+        width: 100%;
+        padding: 10px 0;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+
+        &::after {
+          background-color: #8b68ad;
+          content: "";
+          position: absolute;
+          height: 3px;
+          left: 50%;
+          bottom: 0;
+          width: 0px;
+          border-radius: 2px;
+          transition: 0.4s;
+          transform: translateX(-50%);
+        }
+
+        &:hover::after,
+        &.active::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

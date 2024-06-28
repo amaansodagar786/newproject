@@ -17,13 +17,15 @@ import Values from './Componants/About/Values/Values';
 // import Event from './Componants/Services/EventManage/Event';
 import Insurance from './Componants/Services/Insurance/Insurance';
 import Eventmanage from './Componants/Services/EventManage/Event';
+import Exheader from './Componants/Navbar/Exheader';
 
 function App() {
   return (
     <>
             <BrowserRouter>
             <Gototop/>
-            <Header/>
+            {/* <Header/> */}
+            <Exheader/>
             <Routes>
             <Route path='/' element= {<Home/>}/>
             <Route path='/about' element= {<About/>}/>
