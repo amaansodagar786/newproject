@@ -17,7 +17,7 @@ const AboutSection = () => {
       <div className="about-content">
         <h1>FIND YOUR DREAM JOB WITH NOAH WORKFORCE DEVELOPMENT SYSTEM</h1>
         <p>
-          Welcome to Noah Workforce Development System, your one-stop-shop for finding the perfect job.
+          Welcome to NOAH Workforce Development System, your one-stop-shop for finding the perfect job.
           We specialize in matching qualified candidates with top-tier companies in a variety of industries.
           Let us help you take the next step in your career today!
         </p>
