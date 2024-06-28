@@ -29,7 +29,7 @@ const Contact = () => {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       setLoad(true);
-      const response = await fetch('http://localhost:3037/contact', {
+      const response = await fetch('https://newprojectbackend.vercel.app/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ const Contact = () => {
         <h2>Better yet, see us in person!</h2>
         <p>We love our customers, so feel free to visit during normal business hours.</p>
         <address>
-          <strong>Noah Workforce Development System</strong>
+          <strong>NOAH Workforce Development System</strong>
           <p><b><FaLocationDot /> : </b> Vasna, Vadodara, Gujarat, India </p>
           <p><b><IoIosCall /> : </b> +91-9510287060 </p>
           <p><b><MdEmail /> : </b> info@noahwds.com </p>
