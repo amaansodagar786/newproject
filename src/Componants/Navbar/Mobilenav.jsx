@@ -7,6 +7,7 @@ import './MobileNavbar.scss';
 
 const MobileNavbar = ({ activeState, setActiveState }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false); // State to manage expanded services
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,6 +40,10 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
     setActiveState(id);
   };
 
+  const toggleServices = () => {
+    setServicesOpen(!servicesOpen);
+  };
+
   return (
     <nav className='MobileNavbar'>
       <img
@@ -68,23 +73,20 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
         <li
           id='services'
           className={activeState === 'services' ? 'active' : ''}
-          onClick={() => hideMenu('services')}
+          onClick={toggleServices} // Toggle services visibility on click
         >
-          <Link to='/hrconsultancy'>HR Consultancy</Link>
-        </li>
-        <li
-          id='eventmanage'
-          className={activeState === 'eventmanage' ? 'active' : ''}
-          onClick={() => hideMenu('eventmanage')}
-        >
-          <Link to='/eventmanage'>Event Management</Link>
-        </li>
-        <li
-          id='insurance'
-          className={activeState === 'insurance' ? 'active' : ''}
-          onClick={() => hideMenu('insurance')}
-        >
-          <Link to='/insurance'>Insurance</Link>
+          <Link to='#'>Services</Link>
+          <ul className={`ServicesDropdown ${servicesOpen ? 'showServices' : ''}`}>
+            <li>
+              <Link to='/hrconsultancy'>HR Consultancy</Link>
+            </li>
+            <li>
+              <Link to='/eventmanage'>Event Management</Link>
+            </li>
+            <li>
+              <Link to='/insurance'>Insurance</Link>
+            </li>
+          </ul>
         </li>
         <li
           id='career'
