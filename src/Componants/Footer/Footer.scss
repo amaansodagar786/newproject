@@ -71,3 +71,78 @@
     }
   }
 }
+// Tablet view adjustments
+@media (max-width: 768px) {
+  .footer-content {
+    .upperline {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .footer-bottom {
+    p {
+      font-size: 11px;
+    }
+
+    .developed-by {
+      .infinity-logo {
+        width: 25px; /* Adjust the size of the image as needed */
+        margin-right: 8px;
+      }
+
+      p {
+        font-size: 11px;
+      }
+
+      a {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+// Mobile view adjustments
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px;
+
+    .footer-content {
+      .upperline {
+        font-size: 13px;
+      }
+
+      p {
+        font-size: 11px;
+      }
+    }
+
+    .footer-bottom {
+      p {
+        font-size: 10px;
+      }
+
+      .developed-by {
+        flex-direction: column;
+        align-items: center;
+
+        .infinity-logo {
+          width: 20px; /* Adjust the size of the image as needed */
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-size: 10px;
+          margin: 0;
+        }
+
+        a {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
