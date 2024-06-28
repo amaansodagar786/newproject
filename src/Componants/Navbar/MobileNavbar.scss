@@ -1,6 +1,3 @@
-// MobileNavbar.scss
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
-
 .MobileNavbar {
   background-color: #fcfbfb;
   display: flex;
@@ -43,7 +40,6 @@
     }
 
     li {
-        // text-align: center;
       font-family: 'Mukta', sans-serif;
       font-weight: 450;
       font-style: normal;
@@ -61,25 +57,13 @@
         padding: 0px 0;
         letter-spacing: 0.5px;
         text-decoration: none;
-
-        // &::after {
-        //   background-color: #8b68ad;
-        //   content: "";
-        //   position: absolute;
-        //   height: 3px;
-        //   left: 50%;
-        //   bottom: 0;
-        //   width: 0px;
-        //   border-radius: 2px;
-        //   transition: 0.4s;
-        //   transform: translateX(-50%);
-        // }
-
-        // &:hover::after,
-        // &.active::after {
-        //   width: 100%;
-        // }
       }
     }
+  }
+
+  // Add styles for other elements as needed
+
+  &.no-scroll {
+    overflow: hidden;
   }
 }
