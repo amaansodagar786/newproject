@@ -44,6 +44,11 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
     setServicesOpen(!servicesOpen);
   };
 
+  const handleServiceClick = (id) => {
+    hideMenu(id); // Hide menu when a service link is clicked
+    setServicesOpen(false); // Close the services dropdown
+  };
+
   return (
     <nav className='MobileNavbar'>
       <img
@@ -77,13 +82,13 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
         >
           <Link to='#'>Services</Link>
           <ul className={`ServicesDropdown ${servicesOpen ? 'showServices' : ''}`}>
-            <li>
+            <li onClick={() => handleServiceClick('hrconsultancy')}>
               <Link to='/hrconsultancy'>HR Consultancy</Link>
             </li>
-            <li>
+            <li onClick={() => handleServiceClick('eventmanage')}>
               <Link to='/eventmanage'>Event Management</Link>
             </li>
-            <li>
+            <li onClick={() => handleServiceClick('insurance')}>
               <Link to='/insurance'>Insurance</Link>
             </li>
           </ul>
