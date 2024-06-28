@@ -51,7 +51,7 @@ const CareerForm = () => {
         setSnackbarSeverity('error');
       }
     } catch (error) {
-      setSnackbarMessage('An error occurred. Please try again.');
+      setSnackbarMessage('Please try again.');
       setSnackbarSeverity('error');
       console.error('Error:', error);
     } finally {
