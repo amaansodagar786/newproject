@@ -10,7 +10,7 @@ const Applications = () => {
     }, []);
 
     const fetchApplicants = () => {
-        axios.get('http://localhost:3035/applicants')
+        axios.get('https://newprojectbackend.vercel.app/applicants')
             .then(response => {
                 setApplicants(response.data);
             })
@@ -20,7 +20,7 @@ const Applications = () => {
     };
 
     const handleDownload = (filename) => {
-        window.open(`http://localhost:3035/download/${filename}`, '_blank');
+        window.open(`https://newprojectbackend.vercel.app/download/${filename}`, '_blank');
     };
 
     return (

@@ -35,7 +35,7 @@ const CareerForm = () => {
     formData.append('resume', values.resume);
 
     try {
-      const response = await fetch('https://newprojectbackend.vercel.app/career', {
+      const response = await fetch('http://localhost:3037/career', {
         method: 'POST',
         body: formData,
       });
