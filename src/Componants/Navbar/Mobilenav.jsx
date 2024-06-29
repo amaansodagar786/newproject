@@ -62,7 +62,7 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
           className={activeState === 'services' ? 'active' : ''}
           onClick={toggleServices}
         >
-          Services <span> <IoIosArrowDown className='mobilesrvcicon' /> </span>
+          Services  <IoIosArrowDown className='mobilesrvcicon' /> 
         </li>
         <ul className={`ServicesDropdown ${servicesOpen ? 'showDropdown' : ''}`}>
           <li

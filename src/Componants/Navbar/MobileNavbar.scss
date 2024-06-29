@@ -29,10 +29,12 @@
     justify-content: flex-start;
     align-items: flex-start;
     position: fixed;
-    top: 50px; /* Adjusted to be below the navbar */
+    top: 50px;
+    /* Adjusted to be below the navbar */
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px); /* Full screen height minus the navbar height */
+    height: calc(100vh - 70px);
+    /* Full screen height minus the navbar height */
     background-color: #fcfbfb;
     z-index: 1;
     padding: 10px 0;
@@ -40,6 +42,15 @@
 
     &.showNavbar {
       display: flex;
+    }
+
+    .mobilesrvcicon {
+      font-size: 15px;
+      padding-top: 1px;
+      // display: flex;
+      
+
+
     }
 
     li {
@@ -62,7 +73,7 @@
         padding: 10px 0;
         letter-spacing: 0.5px;
         text-decoration: none;
-        
+
 
         &::after {
           background-color: #8b68ad;
@@ -98,10 +109,4 @@
       padding: 5px 20px;
     }
   }
-}
-.mobilesrvcicon
-{
-  font-size: 15px;
-  
-  
 }
