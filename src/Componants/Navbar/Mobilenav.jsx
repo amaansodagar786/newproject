@@ -52,18 +52,21 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
         <li
           id='services'
           className={activeState === 'services' ? 'active' : ''}
+          onClick={() => hideMenu('services')}
         >
           <Link to='/hrconsultancy'>HR Consultancy</Link>
         </li>
         <li
           id='eventmanage'
           className={activeState === 'eventmanage' ? 'active' : ''}
+          onClick={() => hideMenu('eventmanage')}
         >
           <Link to='/eventmanage'>Event Management</Link>
         </li>
         <li
           id='insurance'
           className={activeState === 'insurance' ? 'active' : ''}
+          onClick={() => hideMenu('insurance')}
         >
           <Link to='/insurance'>Insurance</Link>
         </li>
