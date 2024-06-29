@@ -4,6 +4,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoCloseOutline } from 'react-icons/io5';
 import logo from '../../Images/Logo/NWDS-Logo-CDR.png';
 import './MobileNavbar.scss';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const MobileNavbar = ({ activeState, setActiveState }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,7 +62,7 @@ const MobileNavbar = ({ activeState, setActiveState }) => {
           className={activeState === 'services' ? 'active' : ''}
           onClick={toggleServices}
         >
-          Services
+          Services <span> <IoIosArrowDown className='mobilesrvcicon' /> </span>
         </li>
         <ul className={`ServicesDropdown ${servicesOpen ? 'showDropdown' : ''}`}>
           <li
