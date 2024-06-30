@@ -28,7 +28,7 @@ const CareerForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://newprojectbackend.vercel.app/career', {
+      const response = await fetch('https://newproject-xi-eight.vercel.app/career', {
         method: 'POST',
         body: formData,
       });
@@ -44,7 +44,7 @@ const CareerForm = () => {
       }
     } catch (error) {
       console.error('API Error:', error);
-      setSnackbarMessage('An error occurred. Please try again.');
+      setSnackbarMessage('Please try again.');
       setSnackbarSeverity('error');
     } finally {
       setLoading(false);
