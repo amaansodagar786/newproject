@@ -28,7 +28,7 @@ const CareerForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://newproject-xi-eight.vercel.app/career', {
+      const response = await fetch('http://newprojectbackend.vercel.app/career', {
         method: 'POST',
         body: formData,
       });
@@ -39,12 +39,12 @@ const CareerForm = () => {
         setSnackbarMessage('Application submitted successfully!');
         setSnackbarSeverity('success');
       } else {
-        setSnackbarMessage('Failed to submit application. Please try again.');
+        setSnackbarMessage(`Failed to submit application: ${data.error}. Please try again.`);
         setSnackbarSeverity('error');
       }
     } catch (error) {
       console.error('API Error:', error);
-      setSnackbarMessage('Please try again.');
+      setSnackbarMessage(` Please try again.`);
       setSnackbarSeverity('error');
     } finally {
       setLoading(false);
@@ -76,7 +76,7 @@ const CareerForm = () => {
     <div className="career-form">
       <h1>We're Hiring!</h1>
       <h2>Join Our Team</h2>
-      <p>If you're interested in one of our open positions , start by applying here and attaching your resume.</p>
+      <p>If you're interested in one of our open positions, start by applying here and attaching your resume.</p>
       <Formik
         initialValues={{ name: '', phone: '', email: '', position: '', message: '', resume: null }}
         validationSchema={validationSchema}
@@ -161,7 +161,7 @@ const CareerForm = () => {
       <Snackbar
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={open}
-        autoHideDuration={6000}
+        autoHideDuration={2000}
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity={snackbarSeverity}>
