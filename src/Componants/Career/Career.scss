@@ -47,6 +47,12 @@
         font-size: 1rem;
         border: 1px solid #ccc;
         border-radius: 5px;
+
+        &::placeholder { 
+          font-family: 'Mukta', sans-serif; 
+          font-size: 0.9rem; 
+          color: #999; 
+      }
       }
   
       .error {
