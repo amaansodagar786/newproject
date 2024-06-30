@@ -76,7 +76,7 @@ const CareerForm = () => {
     <div className="career-form">
       <h1>We're Hiring!</h1>
       <h2>Join Our Team</h2>
-      <p>If you're interested in one of our open positions, start by applying here and attaching your resume.</p>
+      <p>If you're interested in one of our open positions , start by applying here and attaching your resume.</p>
       <Formik
         initialValues={{ name: '', phone: '', email: '', position: '', message: '', resume: null }}
         validationSchema={validationSchema}
