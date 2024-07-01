@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import './Career.scss';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
@@ -28,12 +29,13 @@ const CareerForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://newprojectbackend.vercel.app/career', {
-        method: 'POST',
-        body: formData,
+      const response = await axios.post('https://newprojectbackend.vercel.app/career', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
 
-      const data = await response.json();
+      const data = response.data;
 
       if (data.success) {
         setSnackbarMessage('Application submitted successfully!');
@@ -44,7 +46,7 @@ const CareerForm = () => {
       }
     } catch (error) {
       console.error('API Error:', error);
-      setSnackbarMessage(` Please try again.`);
+      setSnackbarMessage(` API Error.`);
       setSnackbarSeverity('error');
     } finally {
       setLoading(false);
