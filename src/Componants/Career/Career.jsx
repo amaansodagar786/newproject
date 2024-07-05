@@ -22,14 +22,14 @@ const CareerForm = () => {
     email: Yup.string().email('Invalid email format').required('Required'),
     position: Yup.string().required('Required'),
     message: Yup.string(),
-    resume: Yup.mixed().required('Required'),
+    resume: Yup.mixed().nullable(),
   });
 
   const submitApplication = async (formData) => {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://newprojectbackend.vercel.app/career', formData, {
+      const response = await axios.post('http://localhost:3037/career', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -46,7 +46,7 @@ const CareerForm = () => {
       }
     } catch (error) {
       console.error('API Error:', error);
-      setSnackbarMessage(` API Error.`);
+      setSnackbarMessage('API Error.');
       setSnackbarSeverity('error');
     } finally {
       setLoading(false);
@@ -61,7 +61,9 @@ const CareerForm = () => {
     formData.append('email', values.email);
     formData.append('position', values.position);
     formData.append('message', values.message);
-    formData.append('resume', values.resume);
+    if (values.resume) {
+      formData.append('resume', values.resume);
+    }
 
     await submitApplication(formData);
     resetForm();
@@ -145,7 +147,6 @@ const CareerForm = () => {
                     setFieldValue('resume', event.currentTarget.files[0]);
                   }}
                 />
-                <ErrorMessage name="resume" component="div" className="error" />
               </div>
             </div>
             {loading ? (
