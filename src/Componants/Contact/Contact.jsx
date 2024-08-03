@@ -29,7 +29,7 @@ const Contact = () => {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       setLoad(true);
-      const response = await fetch('https://newprojectbackend.vercel.app/contact', {
+      const response = await fetch('https://newprojectbackend-h9en.onrender.com/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
