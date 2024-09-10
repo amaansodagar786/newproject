@@ -17,7 +17,8 @@ const Footer = () => {
         <div className="developed-by">
           
           <a href="https://www.instagram.com/infinity.incorp/" target="_blank" rel="noopener noreferrer">
-          <p>Developed by ∞ </p>
+          <p>Developed by Amaan Sodagar </p>
+          {/* ∞  */}
           </a>
         </div>
       </div>
